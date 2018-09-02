@@ -7,9 +7,10 @@ body {
     width: 100%;
 }
 
-h1 {
+.font {
     font-style: italic;
     width: 100%;
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,6 +18,10 @@ h1 {
 
 #red_font {
     color: red;
-    align-items: center;
+    font-size: 35px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
 }
