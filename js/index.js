@@ -1,23 +1,41 @@
 alert('Hello, do You know how to solve a square equation?');
-alert('Lets do it together:))');
+alert('Let\'s do it together:))');
 
 const a = parseFloat(prompt('Enter your variable A'));
 const b = parseFloat(prompt('Enter your variable B'));
 const c = parseFloat(prompt('Enter your variable C'));
 
-const result = comparison(a, b, c);
+const result = solvingQuadraticEquation(a, b, c);
 alert(result);
 
-function comparison(a, b, c) {
-    if ((b * b - 4 * a * c) < 0) {
+function solvingQuadraticEquation(a, b, c) {
+    if (discriminator() < 0) {
         return 'No solution equation!';
-    } else if ((b * b - 4 * a * c) === 0) {
-        return 'X = '+ (0 - b) / (2 * a);
-    } else if ((b * b - 4 * a * c) > 0) {
-        return 'X1 = '+ ((0 - b) - (Math.sqrt(b * b - 4 * a * c))) / (2 * a)
-        + '     X2 = '+ ((0 - b) + (Math.sqrt(b * b - 4 * a * c))) / (2 * a);
+    } else if (discriminator() === 0) {
+        return 'X = '+ solvingX();
+    } else if (discriminator() > 0) {
+        return 'X1 = '+ solvingXOne()
+        + '     X2 = '+ solvingXTwo();
     }
 }
+
+function discriminator() {
+    return b * b - 4 * a * c;
+}
+
+function solvingX() {
+    return  - b / (2 * a);
+}
+
+function solvingXOne() {
+    return (- b - (Math.sqrt(discriminator()))) / (2 * a);
+}
+
+function solvingXTwo() {
+    return (- b + (Math.sqrt(discriminator()))) / (2 * a);
+}
+
+
 
 //дискримінант = b * b - 4 * a * c;
 //return 'X1 = '+ x1 + 'X2' +x2;
